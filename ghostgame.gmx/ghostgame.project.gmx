@@ -6,20 +6,48 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprEnemyGhost</sprite>
     <sprite>sprites\sprFloor</sprite>
-    <sprite>sprites\sprPlayer</sprite>
+    <sprite>sprites\sprEndGoal</sprite>
+    <sprites name="menuSprites">
+      <sprite>sprites\sprButton</sprite>
+      <sprite>sprites\sprLevelSelect</sprite>
+    </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bgrMenu</background>
+    <background>background\bgrHaunted</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
+    <object>objects\objPlayer</object>
     <object>objects\objEnemyGhost</object>
     <object>objects\objFloor</object>
-    <object>objects\objPlayer</object>
+    <object>objects\objEndGoal</object>
     <object>objects\objLighting</object>
+    <objects name="menuObjects">
+      <object>objects\objLevelSelectController</object>
+      <object>objects\objLevelSelect</object>
+      <objects name="buttons">
+        <object>objects\objButton</object>
+        <object>objects\objNewGameButton</object>
+        <object>objects\objLevelSelectButton</object>
+        <object>objects\objQuitButton</object>
+        <object>objects\objSettingsButton</object>
+        <object>objects\objBackMenuButton</object>
+      </objects>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <rooms name="menuRooms">
+      <room>rooms\Menu</room>
+      <room>rooms\LevelSelect</room>
+      <room>rooms\Settings</room>
+    </rooms>
+    <rooms name="gameRooms">
+      <room>rooms\Level1</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
