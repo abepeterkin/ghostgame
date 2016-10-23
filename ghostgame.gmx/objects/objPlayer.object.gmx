@@ -28,6 +28,8 @@
             <string>canjump = false;
 canmove = true;
 enemy = 0;
+enemyspeed = 0;
+time  = 0;
 
 xspeed = 0;
 yspeed = 0;
@@ -44,7 +46,7 @@ immuneTime = PLAYER_RECOVER_TIME * room_speed;
 melee = instance_create(x, y, objMelee);
 instance_deactivate_object(melee);
 
-friction = 0.2;
+friction = 0.1;
 </string>
           </argument>
         </arguments>
@@ -68,7 +70,7 @@ friction = 0.2;
           <argument>
             <kind>1</kind>
             <string>canmove = true;
-enemy.hspeed = 2;
+enemy.speed = enemyspeed;
 enemy.friction = 0;
 </string>
           </argument>
@@ -229,55 +231,74 @@ melee.y = y + yspeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-if(canmove){
+            <string>if(canmove){
   enemy = other.id;
+  enemyhspeed = other.hspeed;
   other.friction = 0.2;
+  show_debug_message(string(y) + " " + string(other.y));
+  if(abs(other.y-y)&lt;1||abs(y-other.y)&lt;1){
+    yspeed = 0;
+    other.vspeed = 0;
+    }
+  else{
+  if(y &lt; other.y){
+    yspeed = -10;
+    canmove = false;
+    time = 30
+    }
+  else if(other.y &lt; y){
+    other.vspeed = -7;
+    canmove = false;
+    time = 30;
+    }
+    }
+    
+  
   if(sign(other.hspeed)!=(sign(xspeed))){
-    xspeed = sign(other.hspeed)*2;
+    xspeed = sign(other.hspeed)*3;
     other.hspeed = -xspeed;
     canmove = false;
-    show_debug_message("Different sign");
+    time = 20;
+
   }
   else{
 
     if(x&lt;other.x){
         if(hspeed&lt;0){
         temp = xspeed;
-        xspeed = other.hspeed*2;
+        xspeed = other.hspeed*3;
         other.hspeed = -temp;
         canmove = false;
-        show_debug_message("same sign");
+       time = 20;
         }
         else{
         temp = xspeed;
-        xspeed = -other.hspeed*2;
+        xspeed = -other.hspeed*3;
         other.hspeed = temp;
         canmove = false;
-        show_debug_message("same sign");
+        time = 20;
         }
     }
     else if(x&gt;other.x){
         if(hspeed&gt;0){
         temp = xspeed;
-        xspeed = other.hspeed*2;
+        xspeed = other.hspeed*3;
         other.hspeed = -temp;
         canmove = false;
-        show_debug_message("same sign");
+       time = 20;
         }
         else{
         temp = xspeed;
-        xspeed = -other.hspeed*2;
+        xspeed = -other.hspeed*3;
         other.hspeed = temp;
         canmove = false;
-        show_debug_message("same sign");
+       time = 20;
         }
         }
     }
-    alarm[2] = 10;
+    alarm[2] = time;
 }
-show_debug_message(other.hspeed);
+
 </string>
           </argument>
         </arguments>
