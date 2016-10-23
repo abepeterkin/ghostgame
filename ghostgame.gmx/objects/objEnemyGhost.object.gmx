@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enemyhealth = 1;
+            <string>event_inherited();
+
+enemyhealth = 1;
 
 speed = 2;
 alarm[0] = 10;

@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enemyhealth = 30;
+            <string>event_inherited();
+
+enemyhealth = 30;
 immune = false;
 immuneTime = PLAYER_RECOVER_TIME * room_speed;
 

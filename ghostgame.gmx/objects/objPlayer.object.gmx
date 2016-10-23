@@ -207,8 +207,8 @@ x+=xspeed;
 y+=yspeed;
 
 
-melee.x = x + sign(image_xscale) * (sprite_get_width(objPlayer) * 0.5 + sign(image_xscale) * xspeed + sprite_get_width(objMelee) * 0.5);
-melee.y = y + yspeed;
+melee.x = x + sprite_get_width(objPlayer) * 0.5 + sprite_get_width(objMelee) * 0.5;
+melee.y = y;
 </string>
           </argument>
         </arguments>

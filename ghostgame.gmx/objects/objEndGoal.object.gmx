@@ -55,6 +55,19 @@
     other.x = other.xspawn;
     other.y = other.yspawn;
     instance_create(0, 0, objLighting);
+    
+    with(objEnemy) { 
+        if(killed) {
+            x = xspawn;
+            y = yspawn;
+            visible = true;
+            instance_change(objEnemyGhost, true);
+            damage = ENEMY_GHOST_DEAL_DAMAGE;
+        } else {
+            visible = false;
+            damage = 0;
+        }
+    }
 }
 </string>
           </argument>
