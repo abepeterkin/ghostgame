@@ -113,7 +113,8 @@ if(enemyhealth &lt;= 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_bounce_all(true);
+            <string>if(!visible) exit;
+move_bounce_all(true);
 </string>
           </argument>
         </arguments>

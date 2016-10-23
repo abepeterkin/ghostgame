@@ -88,6 +88,9 @@ direction = 180 - direction;
             <kind>1</kind>
             <string>event_inherited();
 
+
+
+if(!visible) exit;
 speed = max(2,speed);
 vspeed = min(TERMINAL_VELOCITY, vspeed + GRAVITY);
 if(sign(hspeed) == 1)
@@ -142,7 +145,8 @@ if(place_meeting(x + hspeed, y + vspeed, objFloor)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!immune) {
+            <string>if(!visible) exit;
+if(!immune) {
     enemyhealth -= other.damage;
     immune = true;
     alarm[1] = immuneTime;
