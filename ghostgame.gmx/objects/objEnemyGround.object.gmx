@@ -98,8 +98,6 @@ hspeed = max(hspeed,2);
 else if (sign(hspeed)==-1)
 hspeed = min(hspeed,-2);
 
-show_debug_message(string(speed));
-
 if(place_meeting(x + hspeed, y, objFloor)) {
     while(!place_meeting(x + sign(hspeed), y, objFloor)) {
         x += sign(hspeed);

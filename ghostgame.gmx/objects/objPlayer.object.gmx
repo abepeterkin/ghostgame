@@ -232,14 +232,13 @@ melee.y = y;
         <arguments>
           <argument>
             <kind>1</kind>
-
             <string>if(!other.visible) exit;
 
 if(canmove){
   enemy = other.id;
   enemyhspeed = other.hspeed;
   other.friction = 0.2;
-  show_debug_message(string(y) + " " + string(other.y));
+
   if(abs(other.y-y)&lt;1||abs(y-other.y)&lt;1){
     yspeed = 0;
     other.vspeed = 0;
