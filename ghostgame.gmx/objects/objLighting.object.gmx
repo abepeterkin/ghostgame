@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -30,7 +30,7 @@ brightness = START_BRIGHTNESS;
 
 lighttransition = (MAX_BRIGHTNESS - MIN_BRIGHTNESS) / (TRANSITION_LENGTH * room_speed);
 
-alarm[0] = 1;
+alarm[1] = 1;
 </string>
           </argument>
         </arguments>

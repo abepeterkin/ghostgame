@@ -68,12 +68,12 @@
     <constant name="ENEMY_GROUND_DEAL_DAMAGE">10</constant>
     <constant name="ENEMY_FLYING_DEAL_DAMAGE">10</constant>
     <constant name="ENEMY_GHOST_DEAL_DAMAGE">10</constant>
-    <constant name="DAY_LENGTH">4</constant>
-    <constant name="NIGHT_LENGTH">2</constant>
-    <constant name="TRANSITION_LENGTH">5</constant>
+    <constant name="DAY_LENGTH">0</constant>
+    <constant name="NIGHT_LENGTH">0</constant>
+    <constant name="TRANSITION_LENGTH">4</constant>
     <constant name="MIN_BRIGHTNESS">0.3</constant>
-    <constant name="MAX_BRIGHTNESS">0.9</constant>
-    <constant name="START_BRIGHTNESS">0.6</constant>
+    <constant name="MAX_BRIGHTNESS">1</constant>
+    <constant name="START_BRIGHTNESS">1</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
