@@ -20,9 +20,6 @@
   <width>192</width>
   <height>192</height>
   <frames>
-    <frame index="0">images\sprLevelSelect_0.png</frame>
-    <frame index="1">images\sprLevelSelect_1.png</frame>
-    <frame index="2">images\sprLevelSelect_2.png</frame>
-    <frame index="3">images\sprLevelSelect_3.png</frame>
+    <frame index="0">images\sprLevelSelect1_0.png</frame>
   </frames>
 </sprite>
