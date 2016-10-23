@@ -157,8 +157,9 @@ if(keyboard_check_pressed(vk_space)) {
     alarm[1] = 5;
 }
 
-if(canmove)
-xspeed = PLAYER_MOVESPEED * (keyboard_check(ord('D')) - keyboard_check(ord('A')));
+if(canmove) {
+    xspeed = PLAYER_MOVESPEED * (keyboard_check(ord('D')) - keyboard_check(ord('A')));
+}
 
 if(xspeed &lt; 0) {
     image_xscale = -1;
@@ -205,7 +206,7 @@ x+=xspeed;
 y+=yspeed;
 
 
-melee.x = x + sprite_get_width(objPlayer) * 0.5 + sprite_get_width(objMelee) * 0.5;
+melee.x = x + image_xscale * (sprite_get_width(objPlayer) * 0.5 + sprite_get_width(objMelee) * 0.5);
 melee.y = y;
 </string>
           </argument>
@@ -229,7 +230,7 @@ melee.y = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if(!other.visible) exit;
 
 if(canmove){
   enemy = other.id;
