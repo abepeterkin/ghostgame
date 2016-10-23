@@ -21,7 +21,11 @@
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
+    <object>objects\objMelee</object>
     <object>objects\objPlayer</object>
+    <object>objects\objEnemy</object>
+    <object>objects\objEnemyGround</object>
+    <object>objects\objEnemyFlying</object>
     <object>objects\objEnemyGhost</object>
     <object>objects\objFloor</object>
     <object>objects\objEndGoal</object>
@@ -29,6 +33,7 @@
     <objects name="menuObjects">
       <object>objects\objLevelSelectController</object>
       <object>objects\objLevelSelect</object>
+      <object>objects\objPauseMenu</object>
       <objects name="buttons">
         <object>objects\objButton</object>
         <object>objects\objNewGameButton</object>
@@ -49,6 +54,24 @@
       <room>rooms\Level1</room>
     </rooms>
   </rooms>
+  <constants number="16">
+    <constant name="GRAVITY">1</constant>
+    <constant name="TERMINAL_VELOCITY">20</constant>
+    <constant name="PLAYER_MOVESPEED">10</constant>
+    <constant name="PLAYER_JUMPSPEED">20</constant>
+    <constant name="PLAYER_HEALTH_MAX">100</constant>
+    <constant name="PLAYER_RECOVER_TIME">1</constant>
+    <constant name="PLAYER_DEAL_DAMAGE">10</constant>
+    <constant name="ENEMY_GROUND_DEAL_DAMAGE">10</constant>
+    <constant name="ENEMY_FLYING_DEAL_DAMAGE">10</constant>
+    <constant name="ENEMY_GHOST_DEAL_DAMAGE">10</constant>
+    <constant name="DAY_LENGTH">4</constant>
+    <constant name="NIGHT_LENGTH">2</constant>
+    <constant name="TRANSITION_LENGTH">5</constant>
+    <constant name="MIN_BRIGHTNESS">0.3</constant>
+    <constant name="MAX_BRIGHTNESS">0.9</constant>
+    <constant name="START_BRIGHTNESS">0.6</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

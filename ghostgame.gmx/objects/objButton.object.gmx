@@ -31,7 +31,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,9 +48,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_center);
+            <string>draw_self();
+draw_set_halign(fa_center);
 draw_set_valign(fa_center);
-draw_text_ext(x, y - sprite_get_height(sprButton) * 0.25, text, 5, sprite_get_width(sprButton));
+draw_text(x, y, text);
 </string>
           </argument>
         </arguments>

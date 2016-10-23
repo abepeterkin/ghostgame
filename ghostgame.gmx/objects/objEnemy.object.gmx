@@ -8,34 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>light = surface_create(view_wview, view_hview);
-brightness = START_BRIGHTNESS;
-
-lighttransition = (MAX_BRIGHTNESS - MIN_BRIGHTNESS) / (TRANSITION_LENGTH * room_speed);
-
-alarm[0] = 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -53,40 +25,7 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(brightness &gt; MIN_BRIGHTNESS) {
-    brightness -= lighttransition;
-    alarm[1] = 1;
-} else {
-    alarm[0] = room_speed * NIGHT_LENGTH;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(brightness &lt; MAX_BRIGHTNESS) {
-    brightness += lighttransition;
-    alarm[0] = 1;
-} else {
-    alarm[1] = room_speed * DAY_LENGTH;
-}
+            <string>immune = false;
 </string>
           </argument>
         </arguments>
@@ -110,19 +49,25 @@ alarm[0] = 1;
           <argument>
             <kind>1</kind>
             <string>if(global.pause) {
+    speed = 0;
     if(alarm[0] &gt; 0) {
         alarm[0]++;
     }
     if(alarm[1] &gt; 0) {
         alarm[1]++;
     }
+    exit;
+}
+
+if(enemyhealth &lt;= 0) {
+    instance_destroy();
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="4" ename="objEnemy">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -139,12 +84,7 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>surface_set_target(light);
-draw_clear(c_black);
-surface_reset_target();
-draw_set_halign(fa_center);
-draw_set_valign(fa_center);
-draw_surface_ext(light, view_xview, view_yview, 1, 1, 0, c_white, 1-brightness);
+            <string>move_bounce_all(true);
 </string>
           </argument>
         </arguments>

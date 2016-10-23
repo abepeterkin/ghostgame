@@ -25,13 +25,61 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xspeed = 0;
-yspeed = 0;
-jumpspeed = -20;
-movespeed = 10;
-grav = 1.5;
-gravmax = 20;
-canjump = false;
+            <string>canjump = false;
+
+health = PLAYER_HEALTH_MAX;
+
+immune = false;
+immuneTime = PLAYER_RECOVER_TIME * room_speed;
+
+melee = instance_create(x, y, objMelee);
+instance_deactivate_object(melee);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_deactivate_object(melee);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>immune = false;
 </string>
           </argument>
         </arguments>
@@ -54,38 +102,121 @@ canjump = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xspeed = movespeed * (keyboard_check(ord('D')) - keyboard_check(ord('A')));
+            <string>if(global.pause) {
+    if(alarm[0] &gt; 0) {
+        alarm[0]++;
+    }
+    if(alarm[1] &gt; 0) {
+        alarm[1]++;
+    }
+    exit;
+}
+
+if(health &lt;= 0) {
+    room_restart();
+}
+
+if(keyboard_check_pressed(vk_space)) {
+    instance_activate_object(melee);
+    alarm[1] = 5;
+}
+
+
+hspeed = PLAYER_MOVESPEED * (keyboard_check(ord('D')) - keyboard_check(ord('A')));
+
+if(hspeed &lt; 0) {
+    image_xscale = -1;
+} else if(hspeed &gt; 0) {
+    image_xscale = 1;
+}
 
 if(place_meeting(x, y + 1, objFloor)) {
-    if(keyboard_check_pressed(vk_space)) {
-        yspeed = jumpspeed;
+    if(keyboard_check_pressed(ord('W'))) {
+        vspeed = -PLAYER_JUMPSPEED;
     }
 } else {
-    yspeed = min(gravmax, yspeed + grav);
+    vspeed = min(TERMINAL_VELOCITY, vspeed + GRAVITY);
 }
 
-if(keyboard_check_released(vk_space) &amp;&amp; yspeed &lt; 0) {
-    yspeed *= 0.5;
+if(keyboard_check_released(ord('W')) &amp;&amp; vspeed &lt; 0) {
+    vspeed *= 0.5;
 }
 
-if(place_meeting(x + xspeed, y, objFloor)) {
-    while(!place_meeting(x + sign(xspeed), y, objFloor)) {
-        x += sign(xspeed);
+if(place_meeting(x + hspeed, y, objFloor)) {
+    while(!place_meeting(x + sign(hspeed), y, objFloor)) {
+        x += sign(hspeed);
     }
-    xspeed = 0;
+    hspeed = 0;
 }
-x += xspeed;
 
-if(place_meeting(x, y + yspeed, objFloor)) {
-    while(!place_meeting(x, y + sign(yspeed), objFloor)) {
-        y += sign(yspeed);
+if(place_meeting(x, y + vspeed, objFloor)) {
+    while(!place_meeting(x, y + sign(vspeed), objFloor)) {
+        y += sign(vspeed);
     }
-    yspeed = 0;
+    vspeed = 0;
 }
-y += yspeed;
 
+if(place_meeting(x + hspeed, y + vspeed, objFloor)) {
+    while(!place_meeting(x + sign(hspeed), y + sign(vspeed), objFloor)) {
+        x += sign(hspeed);
+        y += sign(vspeed);
+    }
+    hspeed = 0;
+    vspeed = 0;
+}
 
-
+melee.x = x + sign(image_xscale) * (sprite_get_width(objPlayer) * 0.5 + sign(image_xscale) * hspeed + sprite_get_width(objMelee) * 0.5);
+melee.y = y + vspeed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objEnemy">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!immune) {
+    health -= other.damage;
+    immune = true;
+    alarm[0] = immuneTime;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_healthbar(10, 10, 110, 25, (health / PLAYER_HEALTH_MAX) * 100, c_black, c_red, c_green, 0, false, true);
 </string>
           </argument>
         </arguments>
