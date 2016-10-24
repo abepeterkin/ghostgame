@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>killed = false;
-xspawn = x;
-yspawn = y;
+xdeath = x;
+ydeath = y;
 </string>
           </argument>
         </arguments>
@@ -114,7 +114,10 @@ if(enemyhealth &lt;= 0) {
           <argument>
             <kind>1</kind>
             <string>if(!visible) exit;
-move_bounce_all(true);
+
+temp = hspeed;
+hspeed = other.hspeed;
+other.hspeed = temp;
 </string>
           </argument>
         </arguments>
