@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\SndSpellbound</sound>
+    <sound>sound\SndGiantWyrm</sound>
+    <sound>sound\SndDarkHallway</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprEnemyGhost</sprite>
