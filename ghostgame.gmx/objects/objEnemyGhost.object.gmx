@@ -55,9 +55,11 @@ damage = ENEMY_GHOST_DEAL_DAMAGE;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 2;
-direction = point_direction(x + irandom(50), y + irandom(50), objPlayer.x, objPlayer.y);
-alarm[0] = 10;
+            <string>if(point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 800) {
+    speed = 2;
+    direction = point_direction(x + irandom(50), y + irandom(50), objPlayer.x, objPlayer.y);
+    alarm[0] = 10;
+}
 </string>
           </argument>
         </arguments>

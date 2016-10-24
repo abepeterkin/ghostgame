@@ -111,7 +111,8 @@ alarm[0] = room_speed * 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!immune) {
+            <string>if(!visible) exit;
+if(!immune) {
     enemyhealth -= other.damage;
     immune = true;
     alarm[1] = immuneTime;

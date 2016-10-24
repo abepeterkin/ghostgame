@@ -58,8 +58,8 @@
     
     with(objEnemy) { 
         if(killed) {
-            x = xspawn;
-            y = yspawn;
+            x = xdeath;
+            y = ydeath;
             visible = true;
             instance_change(objEnemyGhost, true);
             damage = ENEMY_GHOST_DEAL_DAMAGE;

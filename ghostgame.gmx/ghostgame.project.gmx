@@ -11,6 +11,7 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprPlayer</sprite>
+    <sprite>sprites\sprMelee</sprite>
     <sprite>sprites\sprEnemyGhost</sprite>
     <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprEndGoal</sprite>
