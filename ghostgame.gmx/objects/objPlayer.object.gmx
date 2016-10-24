@@ -232,7 +232,15 @@ melee.y = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!other.visible) exit;
+            <string>
+if(!other.visible) exit;
+
+if(!immune) {
+    health -= other.damage;
+    immune = true;
+    alarm[0] = immuneTime;
+}
+
 
 if(canmove){
   enemy = other.id;
