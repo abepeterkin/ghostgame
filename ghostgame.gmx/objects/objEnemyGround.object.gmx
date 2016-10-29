@@ -27,9 +27,11 @@
             <kind>1</kind>
             <string>event_inherited();
 
-enemyhealth = 30;
+enemyhealth = 20;
 immune = false;
 immuneTime = PLAYER_RECOVER_TIME * room_speed;
+
+canturn = true;
 
 direction = 0;
 speed = 2;
@@ -40,6 +42,29 @@ damage = ENEMY_GROUND_DEAL_DAMAGE;
 alarm[0] = room_speed * 3;
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canturn = true;
 </string>
           </argument>
         </arguments>
@@ -81,8 +106,10 @@ if(place_meeting(x + hspeed, y, objFloor)) {
         x += sign(hspeed);
     }
     direction = 180 - direction;
-} else if(!instance_position(x, y + sprite_height, objFloor) &amp;&amp; !immune) {
+} else if(!instance_position(x + hspeed, y + sprite_height, objFloor) &amp;&amp; canturn) {
     direction = 180 - direction;
+    canturn = false;
+    alarm[0] = room_speed;
 }
 
 if(place_meeting(x, y + vspeed, objFloor)) {

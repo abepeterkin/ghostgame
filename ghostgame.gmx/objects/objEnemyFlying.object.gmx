@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-enemyhealth = 30;
+enemyhealth = 20;
 immune = false;
 immuneTime = PLAYER_RECOVER_TIME * room_speed;
 
