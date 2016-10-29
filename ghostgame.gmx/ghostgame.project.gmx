@@ -10,7 +10,7 @@
     <sound>sound\sndDarkHallway</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\sprPlayer</sprite>
+    <sprite>sprites\sprPlayerDEMO</sprite>
     <sprite>sprites\sprMelee</sprite>
     <sprite>sprites\sprEnemyGhost</sprite>
     <sprite>sprites\sprFloor</sprite>
@@ -21,6 +21,8 @@
     </sprites>
     <sprite>sprites\sprCannon</sprite>
     <sprite>sprites\sprBullet</sprite>
+    <sprite>sprites\sprPlayerStill</sprite>
+    <sprite>sprites\sprPlayerWalk</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgrMenu</background>
