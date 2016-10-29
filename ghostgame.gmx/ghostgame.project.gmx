@@ -5,9 +5,9 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\SndSpellbound</sound>
-    <sound>sound\SndGiantWyrm</sound>
-    <sound>sound\SndDarkHallway</sound>
+    <sound>sound\sndSpellbound</sound>
+    <sound>sound\sndGiantWyrm</sound>
+    <sound>sound\sndDarkHallway</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprPlayer</sprite>
@@ -52,6 +52,8 @@
     </objects>
     <object>objects\objBullet</object>
     <object>objects\objCannon</object>
+    <object>objects\objLevelMusic</object>
+    <object>objects\objMenuMusic</object>
   </objects>
   <rooms name="rooms">
     <rooms name="menuRooms">

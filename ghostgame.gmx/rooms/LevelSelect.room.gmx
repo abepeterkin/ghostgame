@@ -53,6 +53,7 @@
   <instances>
     <instance objName="objBackMenuButton" x="128" y="64" name="inst_1CC2B103" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLevelSelectController" x="0" y="0" name="inst_B95FA663" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMenuMusic" x="32" y="0" name="inst_E18B4B7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

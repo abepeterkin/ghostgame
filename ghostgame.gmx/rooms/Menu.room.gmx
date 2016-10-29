@@ -55,6 +55,7 @@
     <instance objName="objLevelSelectButton" x="512" y="256" name="inst_868CF982" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSettingsButton" x="512" y="320" name="inst_A48EA712" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objQuitButton" x="512" y="384" name="inst_F988733E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMenuMusic" x="0" y="0" name="inst_D0D0DD3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
