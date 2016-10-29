@@ -132,6 +132,7 @@ if(!immune) {
         hspeed = 2;
     }
     vspeed = -10;
+    image_blend = c_red;
 }
 </string>
           </argument>
