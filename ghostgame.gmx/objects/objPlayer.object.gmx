@@ -118,6 +118,7 @@ friction = 0.1;
           <argument>
             <kind>1</kind>
             <string>immune = false;
+image_blend = -1;
 </string>
           </argument>
         </arguments>
@@ -257,19 +258,12 @@ if(canmove) {
     alarm[2] = 20;
     
     if(x &gt; other.x) {
-        if(other.image_xscale &lt; 0) {
-            hspeed = -4;
-        } else {
-            hspeed = 4;
-        }
+        hspeed = 4;
     } else {
-        if(other.image_xscale &lt; 0) {
-            hspeed = 4;
-        } else {
-            hspeed = -4;
-        }
+        hspeed = -4;
     }
     vspeed = -10;
+    image_blend = c_red;
 }
 </string>
           </argument>
@@ -311,19 +305,12 @@ if(canmove) {
     alarm[2] = 20;
     
     if(x &gt; other.x) {
-        if(other.image_xscale &lt; 0) {
-            hspeed = -4;
-        } else {
-            hspeed = 4;
-        }
+        hspeed = 4;
     } else {
-        if(other.image_xscale &lt; 0) {
-            hspeed = 4;
-        } else {
-            hspeed = -4;
-        }
+        hspeed = -4;
     }
     vspeed = -10;
+    image_blend = c_red;
 }
 </string>
           </argument>
