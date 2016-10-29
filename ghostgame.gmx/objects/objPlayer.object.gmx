@@ -70,8 +70,8 @@ friction = 0.1;
           <argument>
             <kind>1</kind>
             <string>canmove = true;
-enemy.speed = enemyspeed;
-enemy.friction = 0;
+//enemy.speed = 2;
+//enemy.friction = 0;
 </string>
           </argument>
         </arguments>
@@ -159,57 +159,118 @@ if(keyboard_check_pressed(vk_space)) {
     alarm[1] = 5;
 }
 
-if(canmove) {
-    xspeed = PLAYER_MOVESPEED * (keyboard_check(ord('D')) - keyboard_check(ord('A')));
+ul = position_meeting(x - sprite_width / 2, y - sprite_width / 2, objEnemy);
+ur = position_meeting(x + sprite_width / 2, y - sprite_width / 2, objEnemy);
+ll = position_meeting(x - sprite_width / 2, y + sprite_width / 2, objEnemy);
+lr = position_meeting(x + sprite_width / 2, y + sprite_width / 2, objEnemy);
+
+if(!ul &amp;&amp; !ur &amp;&amp; !ll &amp;&amp; ! lr) {
+    //canmove = true;
 }
 
-if(xspeed &lt; 0) {
+if(canmove) {
+    hspeed = PLAYER_MOVESPEED * (keyboard_check(ord('D')) - keyboard_check(ord('A')));
+    
+    if(hspeed &lt; 0) {
     image_xscale = -1;
-} else if(xspeed &gt; 0) {
-    image_xscale = 1;
+    } else if(hspeed &gt; 0) {
+        image_xscale = 1;
+    }
 }
+
 
 if(place_meeting(x, y + 1, objFloor)) {
     if(keyboard_check_pressed(ord('W'))) {
-        yspeed = -PLAYER_JUMPSPEED;
+        vspeed = -PLAYER_JUMPSPEED;
     }
 } else {
-    yspeed = min(TERMINAL_VELOCITY, yspeed + GRAVITY);
+    vspeed = min(TERMINAL_VELOCITY, vspeed + GRAVITY);
 }
 
-if(keyboard_check_released(ord('W')) &amp;&amp; yspeed &lt; 0) {
-    yspeed *= 0.5;
+if(keyboard_check_released(ord('W')) &amp;&amp; vspeed &lt; 0) {
+    vspeed *= 0.5;
 }
 
-if(place_meeting(x + xspeed, y, objFloor)) {
-    while(!place_meeting(x + sign(xspeed), y, objFloor)) {
-        x += sign(xspeed);
+if(place_meeting(x + hspeed, y, objFloor)) {
+    while(!place_meeting(x + sign(hspeed), y, objFloor)) {
+        x += sign(hspeed);
     }
-    xspeed = 0;
+    hspeed = 0;
 }
 
-if(place_meeting(x, y + yspeed, objFloor)) {
-    while(!place_meeting(x, y + sign(yspeed), objFloor)) {
-        y += sign(yspeed);
+if(place_meeting(x, y + vspeed, objFloor)) {
+    while(!place_meeting(x, y + sign(vspeed), objFloor)) {
+        y += sign(vspeed);
     }
-    yspeed = 0;
+    vspeed = 0;
 }
 
-if(place_meeting(x + xspeed, y + yspeed, objFloor)) {
-    while(!place_meeting(x + sign(xspeed), y + sign(yspeed), objFloor)) {
-        x += sign(xspeed);
-        y += sign(yspeed);
+if(place_meeting(x + hspeed, y + vspeed, objFloor)) {
+    while(!place_meeting(x + sign(hspeed), y + sign(vspeed), objFloor)) {
+        x += sign(hspeed);
+        y += sign(vspeed);
     }
-    xspeed = 0;
-    yspeed = 0;
+    hspeed = 0;
+    vspeed = 0;
 }
-xspeed *=(1-friction);
-x+=xspeed;
-y+=yspeed;
 
 
 melee.x = x + image_xscale * (sprite_get_width(objPlayer) * 0.5 + sprite_get_width(objMelee) * 0.5);
 melee.y = y;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objEnemyFlying">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if(!other.visible) exit;
+
+if(!immune) {
+    health -= other.damage;
+    immune = true;
+    alarm[0] = immuneTime;
+}
+
+if(canmove) {
+    //temp = hspeed * 0.4;
+    //hspeed = other.hspeed * 0.6;
+    //other.hspeed = temp;
+    canmove = false;
+    //other.alarm[0] = room_speed * 3;
+    alarm[2] = 20;
+    
+    if(x &gt; other.x) {
+        if(other.image_xscale &lt; 0) {
+            hspeed = -4;
+        } else {
+            hspeed = 4;
+        }
+    } else {
+        if(other.image_xscale &lt; 0) {
+            hspeed = 4;
+        } else {
+            hspeed = -4;
+        }
+    }
+    vspeed = -10;
+}
 </string>
           </argument>
         </arguments>
@@ -241,75 +302,29 @@ if(!immune) {
     alarm[0] = immuneTime;
 }
 
-
-if(canmove){
-  enemy = other.id;
-  enemyhspeed = other.hspeed;
-  other.friction = 0.2;
-
-  if(abs(other.y-y)&lt;1||abs(y-other.y)&lt;1){
-    yspeed = 0;
-    other.vspeed = 0;
-    }
-  else{
-  if(y &lt; other.y){
-    yspeed = -10;
+if(canmove) {
+    //temp = hspeed * 0.4;
+    //hspeed = other.hspeed * 0.6;
+    //other.hspeed = temp;
     canmove = false;
-    time = 30
-    }
-  else if(other.y &lt; y){
-    other.vspeed = -7;
-    canmove = false;
-    time = 30;
-    }
-    }
+    //other.alarm[0] = room_speed * 3;
+    alarm[2] = 20;
     
-  
-  if(sign(other.hspeed)!=(sign(xspeed))){
-    xspeed = sign(other.hspeed)*3;
-    other.hspeed = -xspeed;
-    canmove = false;
-    time = 20;
-
-  }
-  else{
-
-    if(x&lt;other.x){
-        if(hspeed&lt;0){
-        temp = xspeed;
-        xspeed = other.hspeed*3;
-        other.hspeed = -temp;
-        canmove = false;
-       time = 20;
+    if(x &gt; other.x) {
+        if(other.image_xscale &lt; 0) {
+            hspeed = -4;
+        } else {
+            hspeed = 4;
         }
-        else{
-        temp = xspeed;
-        xspeed = -other.hspeed*3;
-        other.hspeed = temp;
-        canmove = false;
-        time = 20;
+    } else {
+        if(other.image_xscale &lt; 0) {
+            hspeed = 4;
+        } else {
+            hspeed = -4;
         }
     }
-    else if(x&gt;other.x){
-        if(hspeed&gt;0){
-        temp = xspeed;
-        xspeed = other.hspeed*3;
-        other.hspeed = -temp;
-        canmove = false;
-       time = 20;
-        }
-        else{
-        temp = xspeed;
-        xspeed = -other.hspeed*3;
-        other.hspeed = temp;
-        canmove = false;
-       time = 20;
-        }
-        }
-    }
-    alarm[2] = time;
+    vspeed = -10;
 }
-
 </string>
           </argument>
         </arguments>
