@@ -148,6 +148,7 @@ if(!immune) {
     enemyhealth -= other.damage;
     immune = true;
     alarm[1] = immuneTime;
+    image_blend = c_red;
 }
 </string>
           </argument>

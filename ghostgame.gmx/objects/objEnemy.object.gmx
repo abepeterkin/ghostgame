@@ -51,6 +51,7 @@ ydeath = y;
           <argument>
             <kind>1</kind>
             <string>immune = false;
+image_blend = -1;
 </string>
           </argument>
         </arguments>
