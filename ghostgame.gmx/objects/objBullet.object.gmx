@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("bullet created");
+            <string>damage = BULLET_DAMAGE;
 </string>
           </argument>
         </arguments>

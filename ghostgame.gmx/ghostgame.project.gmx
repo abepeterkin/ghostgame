@@ -68,7 +68,7 @@
       <room>rooms\Level4</room>
     </rooms>
   </rooms>
-  <constants number="16">
+  <constants number="17">
     <constant name="GRAVITY">1.6</constant>
     <constant name="TERMINAL_VELOCITY">20</constant>
     <constant name="PLAYER_MOVESPEED">10</constant>
@@ -85,6 +85,7 @@
     <constant name="MIN_BRIGHTNESS">0.3</constant>
     <constant name="MAX_BRIGHTNESS">1</constant>
     <constant name="START_BRIGHTNESS">1</constant>
+    <constant name="BULLET_DAMAGE">15</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

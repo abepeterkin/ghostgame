@@ -49,8 +49,7 @@ shoot_speed = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("alarm 0");
-var bullet = instance_create(x, y, objBullet);
+            <string>var bullet = instance_create(x, y, objBullet);
 with (bullet)
    {
    speed = other.shoot_speed;
