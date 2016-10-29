@@ -19,6 +19,8 @@
       <sprite>sprites\sprButton</sprite>
       <sprite>sprites\sprLevelSelect</sprite>
     </sprites>
+    <sprite>sprites\sprCannon</sprite>
+    <sprite>sprites\sprBullet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgrMenu</background>
@@ -48,6 +50,8 @@
         <object>objects\objBackMenuButton</object>
       </objects>
     </objects>
+    <object>objects\objBullet</object>
+    <object>objects\objCannon</object>
   </objects>
   <rooms name="rooms">
     <rooms name="menuRooms">
