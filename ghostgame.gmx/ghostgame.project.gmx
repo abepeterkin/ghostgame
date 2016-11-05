@@ -8,6 +8,7 @@
     <sound>sound\sndSpellbound</sound>
     <sound>sound\sndGiantWyrm</sound>
     <sound>sound\sndDarkHallway</sound>
+    <sound>sound\sndSplitInSynapse</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprPlayerDEMO</sprite>
