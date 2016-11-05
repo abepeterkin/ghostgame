@@ -61,6 +61,7 @@
     <object>objects\objCannon</object>
     <object>objects\objLevelMusic</object>
     <object>objects\objMenuMusic</object>
+    <object>objects\objBossMusic</object>
   </objects>
   <rooms name="rooms">
     <rooms name="menuRooms">

@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>audio_stop_all();
-audio_play_sound(sndDarkHallway, 0, true);
+audio_play_sound(sndGiantWyrm, 0, true);
 
 </string>
           </argument>
