@@ -12,6 +12,7 @@
   <sprites name="sprites">
     <sprite>sprites\sprPlayerDEMO</sprite>
     <sprite>sprites\sprMelee</sprite>
+    <sprite>sprites\sprEnemyGround</sprite>
     <sprite>sprites\sprEnemyGhost</sprite>
     <sprite>sprites\sprEnemyGhostBoss</sprite>
     <sprite>sprites\sprFloor</sprite>
