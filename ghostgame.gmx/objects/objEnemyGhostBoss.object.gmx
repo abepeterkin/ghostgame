@@ -33,6 +33,9 @@ speed = 2;
 alarm[0] = 10;
 
 damage = ENEMY_GHOST_DEAL_DAMAGE;
+
+audio_stop_all();
+audio_play_sound(sndSplitInSynapse, 0, true);
 </string>
           </argument>
         </arguments>
