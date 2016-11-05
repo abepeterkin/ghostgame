@@ -40,6 +40,10 @@ levelSelect3.image_index = 2;
 levelSelect4 = instance_create(694, 148, objLevelSelect);
 levelSelect4.target = Level4;
 levelSelect4.image_index = 3;
+
+levelSelect5 = instance_create(894, 148, objLevelSelect);
+levelSelect5.target = Level5;
+levelSelect5.image_index = 4;
 </string>
           </argument>
         </arguments>
