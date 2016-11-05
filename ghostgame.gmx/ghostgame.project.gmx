@@ -39,6 +39,7 @@
     <object>objects\objEnemyGround</object>
     <object>objects\objEnemyBoss</object>
     <object>objects\objEnemyFlying</object>
+    <object>objects\objEnemyFlying2</object>
     <object>objects\objEnemyGhost</object>
     <object>objects\objEnemyGhostBoss</object>
     <object>objects\objFloor</object>
@@ -76,6 +77,7 @@
       <room>rooms\Level3</room>
       <room>rooms\Level4</room>
       <room>rooms\Level5</room>
+      <room>rooms\Level6</room>
     </rooms>
   </rooms>
   <constants number="17">
