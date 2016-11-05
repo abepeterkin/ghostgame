@@ -35,6 +35,7 @@ canturn = true;
 
 direction = 0;
 speed = 2;
+image_speed = 0.30;
 //friction = 0.4;
 
 damage = ENEMY_GROUND_DEAL_DAMAGE;
