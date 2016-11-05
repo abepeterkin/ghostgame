@@ -14,7 +14,7 @@
     <sprite>sprites\sprPlayerDEMO</sprite>
     <sprite>sprites\sprMelee</sprite>
     <sprite>sprites\sprEnemyGround</sprite>
-    <sprite>sprites\sprEnemyGhost</sprite>
+    <sprite>sprites\sprEnemyGhostDEMO</sprite>
     <sprite>sprites\sprEnemyGhostBoss</sprite>
     <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprEndGoal</sprite>
@@ -24,8 +24,9 @@
     </sprites>
     <sprite>sprites\sprCannon</sprite>
     <sprite>sprites\sprBullet</sprite>
-    <sprite>sprites\sprPlayerStill</sprite>
-    <sprite>sprites\sprPlayerWalk</sprite>
+    <sprite>sprites\sprPlayer</sprite>
+    <sprite>sprites\sprite13</sprite>
+    <sprite>sprites\sprEnemyGhost</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgrMenu</background>
