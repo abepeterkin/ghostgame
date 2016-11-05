@@ -216,6 +216,8 @@ if(place_meeting(x + hspeed, y + vspeed, objFloor)) {
 }
 
 
+melee.hspeed = hspeed;
+melee.vspeed = vspeed;
 melee.x = x + image_xscale * (sprite_get_width(objPlayer) * 0.5 + sprite_get_width(objMelee) * 0.5);
 melee.y = y;
 </string>
@@ -364,6 +366,53 @@ if(canmove) {
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objEnemyBoss">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if(!other.visible) exit;
+
+if(!immune) {
+    health -= other.damage;
+    immune = true;
+    alarm[0] = immuneTime;
+}
+
+if(canmove) {
+    //temp = hspeed * 0.4;
+    //hspeed = other.hspeed * 0.6;
+    //other.hspeed = temp;
+    canmove = false;
+    //other.alarm[0] = room_speed * 3;
+    alarm[2] = 20;
+    
+    if(x &gt; other.x) {
+        hspeed = 4;
+    } else {
+        hspeed = -4;
+    }
+    vspeed = -10;
+    image_blend = c_red;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objEnemyGround">
       <action>
         <libid>1</libid>
@@ -432,6 +481,7 @@ if(canmove) {
     health -= other.damage;
     immune = true;
     alarm[0] = immuneTime;
+    image_blend = c_red;
 }
 </string>
           </argument>

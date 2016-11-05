@@ -49,7 +49,11 @@
           <argument>
             <kind>1</kind>
             <string>if(endday) {
-    room_goto(LevelSelect);
+    if(room != BossRoom) {
+        room_goto(room_next(room));
+    } else {
+        room_goto(LevelSelect);
+    }
 } else {
     endday = true;
     other.x = other.xspawn;
@@ -61,8 +65,14 @@
             x = xdeath;
             y = ydeath;
             visible = true;
-            instance_change(objEnemyGhost, true);
-            damage = ENEMY_GHOST_DEAL_DAMAGE;
+            
+            if(room = BossRoom) {
+                instance_change(objEnemyGhostBoss, true);
+                damage = ENEMY_GHOST_DEAL_DAMAGE;
+            } else {
+                instance_change(objEnemyGhost, true);
+                damage = ENEMY_GHOST_DEAL_DAMAGE;
+            }
         } else {
             visible = false;
             damage = 0;
