@@ -72,6 +72,7 @@
       <room>rooms\Level2</room>
       <room>rooms\Level3</room>
       <room>rooms\Level4</room>
+      <room>rooms\Level5</room>
     </rooms>
   </rooms>
   <constants number="17">
