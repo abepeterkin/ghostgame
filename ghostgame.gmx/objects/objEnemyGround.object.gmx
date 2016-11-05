@@ -106,7 +106,7 @@ if(place_meeting(x + hspeed, y, objFloor)) {
         x += sign(hspeed);
     }
     direction = 180 - direction;
-} else if(!instance_position(x + hspeed, y + sprite_height, objFloor) &amp;&amp; canturn) {
+} else if(!instance_position(x + hspeed, y + sprite_height, objFloor) &amp;&amp; canturn &amp;&amp; !immune) {
     direction = 180 - direction;
     canturn = false;
     alarm[0] = room_speed;
