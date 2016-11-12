@@ -40,6 +40,9 @@ still_image_index = 0;
 walking_image_index_start = 1;
 walking_image_index_end = 8;
 
+imagestart = 0;
+imageend = 1;
+image_speed = 0.4;
 health = PLAYER_HEALTH_MAX;
 
 immune = false;
@@ -152,6 +155,16 @@ image_blend = -1;
     }
     exit;
 }
+
+if (hspeed != 0) {
+    imagestart = walking_image_index_start;
+    imageend = walking_image_index_end ;
+} else {
+    imagestart = still_image_index;
+    imageend = still_image_index + 1;
+}
+
+image_index = max(imagestart, image_index mod imageend);
 
 if(health &lt;= 0) {
     room_restart();

@@ -46,8 +46,12 @@ levelSelect5.target = Level5;
 levelSelect5.image_index = 4;
 
 levelSelect5 = instance_create(94, 350, objLevelSelect);
-levelSelect5.target = BossRoom;
+levelSelect5.target = Level6;
 levelSelect5.image_index = 5;
+
+levelSelect5 = instance_create(294, 350, objLevelSelect);
+levelSelect5.target = BossRoom;
+levelSelect5.image_index = 6;
 </string>
           </argument>
         </arguments>

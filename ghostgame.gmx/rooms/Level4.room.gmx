@@ -212,6 +212,7 @@
     <instance objName="objFloor" x="1728" y="2112" name="inst_C4BAE624" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyGround" x="992" y="2080" name="inst_F418F3E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyFlying" x="608" y="1984" name="inst_B46D8FFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevelMusic" x="32" y="0" name="inst_A238ADA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
