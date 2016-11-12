@@ -41,14 +41,6 @@ levelSelect4 = instance_create(694, 148, objLevelSelect);
 levelSelect4.target = Level4;
 levelSelect4.image_index = 3;
 
-levelSelect5 = instance_create(894, 148, objLevelSelect);
-levelSelect5.target = Level5;
-levelSelect5.image_index = 4;
-
-levelSelect5 = instance_create(94, 350, objLevelSelect);
-levelSelect5.target = Level6;
-levelSelect5.image_index = 5;
-
 levelSelect5 = instance_create(294, 350, objLevelSelect);
 levelSelect5.target = BossRoom;
 levelSelect5.image_index = 6;

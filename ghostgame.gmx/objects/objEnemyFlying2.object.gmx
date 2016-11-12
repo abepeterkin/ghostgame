@@ -31,10 +31,12 @@ enemyhealth = 20;
 immune = false;
 immuneTime = PLAYER_RECOVER_TIME * room_speed;
 
-direction = 180;
+direction = 0;
 speed = -2;
 
 damage = ENEMY_FLYING_DEAL_DAMAGE;
+
+image_speed = 0.5;
 </string>
           </argument>
         </arguments>

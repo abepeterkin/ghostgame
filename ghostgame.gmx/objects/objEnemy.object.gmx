@@ -91,6 +91,8 @@ if(enemyhealth &lt;= 0) {
     visible = false;
     damage = 0;
     killed = true;
+    xdeath = x;
+    ydeath = y;
 }
 
 

@@ -11,44 +11,57 @@
     <sound>sound\sndSplitInSynapse</sound>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprPlayerDEMO</sprite>
     <sprite>sprites\sprMelee</sprite>
-    <sprite>sprites\sprEnemyGround</sprite>
-    <sprite>sprites\sprEnemyGhostDEMO</sprite>
-    <sprite>sprites\sprEnemyGhostBoss</sprite>
+    <sprites name="enemies">
+      <sprite>sprites\sprEnemyGround</sprite>
+      <sprite>sprites\sprEnemyFlying</sprite>
+      <sprite>sprites\sprEnemyGhost</sprite>
+      <sprite>sprites\sprEnemyGhostBoss</sprite>
+      <sprite>sprites\sprEnemyGhostDEMO</sprite>
+    </sprites>
     <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprBossRoomBlocker</sprite>
+    <sprite>sprites\sprBullet</sprite>
+    <sprite>sprites\sprCannon</sprite>
     <sprite>sprites\sprEndGoal</sprite>
     <sprites name="menuSprites">
       <sprite>sprites\sprButton</sprite>
       <sprite>sprites\sprLevelSelect</sprite>
     </sprites>
-    <sprite>sprites\sprCannon</sprite>
-    <sprite>sprites\sprBullet</sprite>
-    <sprite>sprites\sprPlayer</sprite>
-    <sprite>sprites\sprite13</sprite>
-    <sprite>sprites\sprEnemyGhost</sprite>
-    <sprite>sprites\sprEnemyFlying</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgrMenu</background>
     <background>background\bgrHaunted</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\fntMenu</font>
+  </fonts>
   <objects name="objects">
     <object>objects\objMelee</object>
     <object>objects\objPlayer</object>
-    <object>objects\objEnemy</object>
-    <object>objects\objEnemyGround</object>
-    <object>objects\objEnemyBoss</object>
-    <object>objects\objEnemyFlying</object>
-    <object>objects\objEnemyFlying2</object>
-    <object>objects\objEnemyGhost</object>
-    <object>objects\objEnemyGhostBoss</object>
+    <objects name="enemies">
+      <object>objects\objEnemy</object>
+      <object>objects\objEnemyGround</object>
+      <object>objects\objEnemyFlying</object>
+      <object>objects\objEnemyFlying2</object>
+      <object>objects\objEnemyGhost</object>
+      <object>objects\objEnemyBoss</object>
+      <object>objects\objEnemyGhostBoss</object>
+    </objects>
     <object>objects\objFloor</object>
     <object>objects\objBossRoomBlocker</object>
     <object>objects\objEndGoal</object>
     <object>objects\objLighting</object>
+    <object>objects\objBullet</object>
+    <object>objects\objCannon</object>
+    <objects name="music">
+      <object>objects\objMenuMusic</object>
+      <object>objects\objLevelMusic</object>
+      <object>objects\objBossMusic</object>
+    </objects>
     <objects name="menuObjects">
       <object>objects\objLevelSelectController</object>
       <object>objects\objLevelSelect</object>
@@ -62,11 +75,6 @@
         <object>objects\objBackMenuButton</object>
       </objects>
     </objects>
-    <object>objects\objBullet</object>
-    <object>objects\objCannon</object>
-    <object>objects\objLevelMusic</object>
-    <object>objects\objMenuMusic</object>
-    <object>objects\objBossMusic</object>
   </objects>
   <rooms name="rooms">
     <rooms name="menuRooms">
@@ -79,8 +87,6 @@
       <room>rooms\Level2</room>
       <room>rooms\Level3</room>
       <room>rooms\Level4</room>
-      <room>rooms\Level5</room>
-      <room>rooms\Level6</room>
       <room>rooms\BossRoom</room>
     </rooms>
   </rooms>
